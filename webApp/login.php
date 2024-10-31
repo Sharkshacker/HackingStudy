@@ -11,6 +11,11 @@
             <div class="nav-left">
                 <a href="index.php">Sharks</a>
             </div>
+            <div class="nav-right">
+            <?php if (isset($_SESSION['username'])) : ?> 
+            <a href="logout.php">logout</a>
+            <?php endif; ?>
+        </div>
         </nav>
         <div class="login-box">
             <h2>Sharks</h2>

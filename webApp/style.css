@@ -88,7 +88,7 @@ button:hover {
     left: 0px;
     z-index: 1000;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
@@ -101,5 +101,17 @@ button:hover {
 }
 
 .nav-left a:hover {
+    color: #007BFF;
+}
+
+.nav-right a {
+    font-size: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    margin-right: 25px;
+}
+
+.nav-right a:hover {
     color: #007BFF;
 }

@@ -2,7 +2,7 @@
     define('DB_SERVER','localhost');
     define('DB_USERNAME','admin');
     define('DB_PASSWORD','student1234');
-    define('DB_NAME','user');
+    define('DB_NAME','users');
 
     $db_conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
 
@@ -15,7 +15,7 @@
         $password = $_POST['password'];
         $password_check = $_POST['password_check'];
         $email = $_POST['email'];
-        $phoneNum = $_POST['phoneNum'];
+        $phoneNum = $_POST['phonenum'];
 
         if ($password !== $password_check) {
             echo "<script>
@@ -25,11 +25,27 @@
             exit();
         }
 
+        if(!filter_var($email,FILTER_VALIDATE_EMAIL)) {
+            echo "<script>
+                alert('이메일 형식이 맞지 않습니다.');
+                history.back();
+            </script>";
+            exit();
+        }
+
+        if(!preg_match("/^\d{3}-\d{4}-\d{4}$/",$phoneNum)) {
+            echo "<script>
+                alert('전화번호 형식이 맞지 않습니다.');
+                history.back();
+            </script>";
+            exit();
+        }
+
         //사용자 중복 확인
         $sql = "SELECT * FROM user_table WHERE id= '$username'";
         $result = mysqli_query($db_conn, $sql);
 
-        if($result && mysqli_num_rows($result)>0); {
+        if($result && mysqli_num_rows($result)>0) {
             echo "<script>
             alert('이미 등록된 정보입니다. 로그인 페이지로 돌아갑니다.');
             window.location.href = 'login.php';
