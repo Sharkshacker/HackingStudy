@@ -29,7 +29,7 @@
             </div>
             <div class="input-group">
             <label for="password_check">Check the PW</label>
-            <input type="password" id="password_check" name="password_check" placeholder="Re-Enter Your ID 0" required>
+            <input type="password" id="password_check" name="password_check" placeholder="Re-Enter Your ID" required>
             </div>
             <div class="input-group">
             <label for="email">Your Email</label>
