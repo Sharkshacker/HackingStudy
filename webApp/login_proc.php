@@ -16,8 +16,9 @@
 
         $username = $_POST["username"];
         $password = $_POST["password"];
+        $hash_password = hash('sha512', $password);
 
-        $sql = "SELECT * FROM user_table WHERE id = '$username' AND password = '$password'";
+        $sql = "SELECT * FROM user_table WHERE id = '$username' AND password = '$hash_password'";
         $result = mysqli_query($db_conn , $sql);
 
         if($result && mysqli_num_rows($result)>0) {

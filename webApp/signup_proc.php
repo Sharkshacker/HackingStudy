@@ -13,6 +13,7 @@
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $hash_password = hash('sha-512',$password);
         $password_check = $_POST['password_check'];
         $email = $_POST['email'];
         $phoneNum = $_POST['phonenum'];
@@ -54,7 +55,7 @@
         }
 
         //사용자 등록
-        $sql = "INSERT INTO user_table (id, password, email, phonenum) VALUES ('$username','$password','$email','$phoneNum')";
+        $sql = "INSERT INTO user_table (id, password, email, phonenum) VALUES ('$username','$hash_password','$email','$phoneNum')";
         
         if(mysqli_query($db_conn,$sql)) {
             echo "<script>

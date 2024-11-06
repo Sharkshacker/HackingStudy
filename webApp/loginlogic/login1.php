@@ -17,19 +17,14 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
 
-        $sql = "SELECT * FROM user_table WHERE id = '$username'";
+        $sql = "SELECT * FROM user_table WHERE id = '$username' AND password = '$password'";
         $result = mysqli_query($db_conn,$sql);
 
         if(mysqli_num_rows($result)>0) {
             $row = mysqli_fetch_array($result);
-            if($row['password'] === $password) {
-                echo "<script>
-                    alert('로그인 성공!');
-                    history.back();
-                </script>";
-            }else {
-                echo "로그인 실패";
-            }
+            echo "로그인 성공!";
+        }else {
+            echo "로그인 실패!";
         }
     }
 ?>

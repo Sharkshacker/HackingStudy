@@ -15,6 +15,19 @@
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         
+        $username = $_POST["username"];
+        $password = $_POST["password"];
+        $hash_password = hash('sha512', $password);
+
+        $sql = "SELECT * FROM user_table WHERE id = '$username' AND password = '$hash_password'";
+        $result = mysqli_query($db_conn , $sql);
+
+        if(mysqli_num_rows($result)>0) {
+            $row = mysqli_fetch_array($result);
+            echo "로그인 성공!";
+        }else {
+            echo "로그인 실패!";
+        }
     }
 ?>
 
@@ -40,7 +53,7 @@
         <div class="login-box">
             <h2>Sharks</h2>
             <h3> Login </h3>
-            <form action="login_proc.php" method="POST">
+            <form action="" method="POST">
             <div class="input-group">
                 <label for="username">ID</label>
                 <input type="text" id="username" name="username" required>
