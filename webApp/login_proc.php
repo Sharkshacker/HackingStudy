@@ -17,27 +17,32 @@
         $username = $_POST["username"];
         $password = $_POST["password"];
 
-        if($username === "admin" && $password === "admin") {
-            $_SESSION['username'] = $username;
-            echo "<script>
-                alert('환영합니다! 관리자 계정입니다.');
-                window.location.href='index.php';
-            </script>";
-            exit();
-        }
-
         $sql = "SELECT * FROM user_table WHERE id = '$username' AND password = '$password'";
-        $result = mysqli_query($db_conn,$sql);
-        
+        $result = mysqli_query($db_conn , $sql);
+
         if($result && mysqli_num_rows($result)>0) {
-            $_SESSION['username'] = $username;
+            $user = mysqli_fetch_assoc($result);
+
+            $_SESSION['username'] = $user['id'];
+            $_SESSION['email'] = $user['email'];
+            $_SESSION['phonenum'] = $user['phonenum'];
+            $_SESSION['idx'] = $user['idx'];
+
+            if($user['id'] === 'admin') {
+                echo "<script>
+                    alert('환영합니다! 관리자계정입니다.');
+                    window.location.href = 'index.php';
+                </script>";
+                exit();
+            } else {                
+                echo "<script>
+                    window.location.href = 'index.php';
+                </script>";
+                exit();
+            }
+        } else {
             echo "<script>
-                window.location.href = 'index.php';
-            </script>";
-            exit();
-        }else {
-            echo "<script>
-                alert('로그인 실패 ! 다시 입력하세요.');
+                alert('로그인 실패! 다시 입력하세요.');
                 history.back();
             </script>";
             exit();
