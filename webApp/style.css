@@ -1,12 +1,16 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #87cee8;
+    background-color: white;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     margin: 0;
     padding-top: 80px;
+}
+
+.login-page, .signup-page, .mypage, .view-page {
+    background-color: #87cee8;
 }
 
 .login-box, .signup-box {
@@ -224,4 +228,243 @@ button:hover {
     border-width: 10px;    /* 가상요소의 경계선 너비를 설정 */
     border-style: solid;
     border-color: transparent transparent #ffffff transparent; 
+}
+
+/* 게시판 스타일 */
+.index {
+    background-color: white;
+    padding: 20px;
+    border-radius: 0;         /* 둥근 모서리를 제거 */
+    width: 100%;              /* 화면 전체 너비 */
+    box-shadow: none;         /* 그림자 제거 */
+    margin: 0;                /* 상하좌우 여백 제거 */
+    text-align: center;
+}
+
+.index h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.index button {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    float: right; /* 버튼을 오른쪽 정렬 */
+    margin-bottom: 20px;
+}
+
+.index button:hover {
+    background-color: #0056b3;
+}
+
+/* 게시판 표 스타일 */
+.index table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.index th, .index td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.index th {
+    background-color: #f0f0f0;
+    font-weight: bold;
+}
+
+.index tr:hover {
+    background-color: #f9f9f9;
+}
+
+/* 페이지네이션 스타일 */
+.page {
+    margin-top: 20px;
+}
+
+.page a {
+    color: #007BFF;
+    padding: 8px 12px;
+    margin: 0 4px;
+    text-decoration: none;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.page a:hover {
+    background-color: #f0f0f0;
+    border-color: #87cee8;
+}
+
+.write {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.write h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+}
+
+.write hr {
+    margin: 20px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+.writeTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.writeTable th {
+    width: 80px;
+    padding: 10px;
+    text-align: left;
+    font-weight: bold;
+    color: #333;
+    border: none;
+}
+
+.writeTable td {
+    padding: 10px;
+    border: none;
+}
+
+.writeTable input[type="text"],
+.writeTable textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    resize: vertical;
+    background-color: white; /* 회색 배경 제거 */
+}
+
+.writeTable textarea {
+    height: 150px;
+}
+
+/* 버튼 스타일 */
+.write ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.write ul li {
+    display: inline;
+}
+
+/* 버튼 스타일 공통 설정 */
+.write .button, 
+.write button {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 15px;
+}
+
+/* 버튼 호버 효과 */
+.write .button:hover,
+.write button:hover {
+    background-color: #0056b3;
+}
+
+/* 게시글 보기 페이지 스타일 */
+.view {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    width: 60%;
+    margin: 20px auto;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.view h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.user_info {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.user_info p {
+    margin: 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 20px 0;
+}
+
+.content {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    text-align: left;
+    white-space: pre-wrap; /* 줄바꿈 유지 */
+}
+
+.viewButton {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 30px;
+}
+
+.viewButton ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px;
+}
+
+.viewButton li {
+    display: inline;
+}
+
+.viewButton button {
+    background-color: skyblue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.viewButton button:hover {
+    background-color: #0056b3;
 }

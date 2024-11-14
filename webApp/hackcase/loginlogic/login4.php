@@ -1,4 +1,5 @@
 <?php
+    // 로그인 식별/인증 분리 (With HASH)
     session_start();
 
     define('DB_SERVER','localhost');
@@ -13,29 +14,24 @@
     }
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
+        
         $username = $_POST['username'];
         $password = $_POST['password'];
+        $hash_password = hash('sha512',$password);
 
-        $sql = "SELECT * FROM user_table WHERE id = '$username' AND password = '$password'";
+        $sql = "SELECT * FROM user_table WHERE id = '$username'";
         $result = mysqli_query($db_conn,$sql);
 
         if(mysqli_num_rows($result)>0) {
             $row = mysqli_fetch_array($result);
 
-            $_SESSION['username'] = $row['id'];
-            $_SESSION['email'] = $row['email'];
-            $_SESSION['phonenum'] = $row['phonenum'];
-            $_SESSION['idx'] = $row['idx'];
-
-            echo "<script>
-                alert('로그인 성공!');
-                window.location.href='mypagetest.php';
-            </script>";
+            if($row['password'] === $hash_password) {
+                echo "로그인 성공 !";
+            }else {
+                echo "로그인 실패!";
+            }
         }else {
-            echo "<script>
-                alert('로그인 실패!');
-                history.back();
-            </script>";
+            echo "로그인 정보 없음 !";
         }
     }
 ?>
@@ -45,16 +41,17 @@
     <head>
         <meta charset="UTF-8">
         <title>Sharks login</title>
-        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="icon" href="/img/sharks2.jpg" type="image/jpeg">
     </head>
     <body>
         <nav class="navbar">
             <div class="nav-left">
-                <a href="">Sharks</a>
+                <a href="index.php">Sharks</a>
             </div>
             <div class="nav-right">
             <?php if (isset($_SESSION['username'])) : ?> 
-            <a href="">logout</a>
+            <a href="logout.php">logout</a>
             <?php endif; ?>
         </div>
         </nav>
@@ -71,10 +68,8 @@
                 <input type="password" id="password" name="password" required>
             </div>
             <button type="submit">submit</button>
-            <p class="signup-text"><a href="">Sign Up</a></p>
+            <p class="signup-text"><a href="signup.php">Sign Up</a></p>
             </form>
         </div>
-        <script src="keylogger.js"></script>
-        <script src="cookie.js"></script>
     </body>
 </html>

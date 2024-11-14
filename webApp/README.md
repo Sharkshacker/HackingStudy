@@ -2,9 +2,11 @@
 파일을 다운하셔서 개인 로컬에서 웹서버를 띄운후에 해킹공부하는데 사용하세요 !
 
 mysql 설정
-- db 이름 : users
+- db 이름 : Sharks
 - 테이블 이름 : user_table
-- 칼럼 : idx id password email phonenum profile_image
+- 칼럼 : user_idx(PK), user_id, user_password, user_email, user_phonenum, profile_image
+- 테이블 이름 : board_table
+- 칼럼 : board_idx(PK), board_title, user_idx(FK), board_date, board_views
 - 해당 DB정보는 사용자에 따라 변경할수있습니다. 변경하면 코드 수정하셔야합니다.
 - 차후 DB정보 업그레이드가 되면 최신화 시킬 예정입니다.
 

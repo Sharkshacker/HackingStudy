@@ -5,7 +5,7 @@ session_start(); // 세션 시작
 if (!isset($_SESSION['username'])) {
     echo "<script>
         alert('로그인 후 사용가능합니다.');
-        window.location.href = 'login.php';
+        window.location.href = 'passlogic/login.php';
     </script>";
     exit();
 }
@@ -19,7 +19,7 @@ if (!isset($_SESSION['username'])) {
         <link rel="stylesheet" href="style.css">
         <link rel="icon" href="/img/sharks2.jpg" type="image/jpeg">
     </head>
-    <body>
+    <body class="mypage">
         <nav class="navbar">
             <div class="nav-left">
                 <a href="index.php">Sharks</a>
@@ -33,7 +33,7 @@ if (!isset($_SESSION['username'])) {
                             <h2><?php echo htmlspecialchars($_SESSION['username']); ?></h2>
                             <p><?php echo htmlspecialchars($_SESSION['email']); ?></p>
                             <a href="mypage.php" class="btn">My Page</a> 
-                            <button class="btn" onclick="window.location.href='logout.php'">Logout</button> 
+                            <button class="btn" onclick="window.location.href='passlogic/logout.php'">Logout</button> 
                         </div>
                     </div>
                 </div>

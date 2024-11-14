@@ -1,16 +1,7 @@
 <?php
     session_start();
-
-    define('DB_SERVER','localhost');
-    define('DB_USERNAME','admin');
-    define('DB_PASSWORD','student1234');
-    define('DB_NAME','users');
-
-    $db_conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
-
-    if($db_conn === false) {
-        die("ERROR: DB가 연결되어있지 않음." . mysqli_connect_error());
-    }
+    
+    include '../db.php';
 
     if($_SERVER['REQUEST_METHOD'] == 'POST'){
 
@@ -18,26 +9,26 @@
         $password = $_POST["password"];
         $hash_password = hash('sha512', $password);
 
-        $sql = "SELECT * FROM user_table WHERE id = '$username' AND password = '$hash_password'";
+        $sql = "SELECT * FROM user_table WHERE user_id = '$username' AND user_password = '$hash_password'";
         $result = mysqli_query($db_conn , $sql);
 
         if($result && mysqli_num_rows($result)>0) {
             $user = mysqli_fetch_assoc($result);
 
-            $_SESSION['username'] = $user['id'];
-            $_SESSION['email'] = $user['email'];
-            $_SESSION['phonenum'] = $user['phonenum'];
-            $_SESSION['idx'] = $user['idx'];
+            $_SESSION['username'] = $user['user_id'];
+            $_SESSION['email'] = $user['user_email'];
+            $_SESSION['phonenum'] = $user['user_phonenum'];
+            $_SESSION['idx'] = $user['user_idx'];
 
-            if($user['id'] === 'admin') {
+            if($user['user_id'] === 'admin') {
                 echo "<script>
                     alert('환영합니다! 관리자계정입니다.');
-                    window.location.href = 'index.php';
+                    window.location.href = '../index.php';
                 </script>";
                 exit();
             } else {                
                 echo "<script>
-                    window.location.href = 'index.php';
+                    window.location.href = '../index.php';
                 </script>";
                 exit();
             }

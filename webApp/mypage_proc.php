@@ -1,15 +1,7 @@
 <?php 
     session_start();
-    define('DB_SERVER','localhost');
-    define('DB_USERNAME','admin');
-    define('DB_PASSWORD','student1234');
-    define('DB_NAME','users');
-
-    $db_conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
-
-    if($db_conn === false) {
-        die('ERROR : DB가 연결되어있지 않음.'.mysqli_connect_error());
-    }
+    
+    include 'db.php';
 
     if($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
@@ -41,7 +33,7 @@
             if(move_uploaded_file($imageFile['tmp_name'],$uploadFile)) {
                 $profileImagePath = $uploadFile;
 
-                $sql = "UPDATE user_table SET id = '$username', email = '$email', phonenum = '$phoneNum', profile_image = '$profileImagePath' WHERE idx = $idx ";
+                $sql = "UPDATE user_table SET user_id = '$username', user_email = '$email', user_phonenum = '$phoneNum', profile_image = '$profileImagePath' WHERE user_idx = $idx ";
             }else {
                 echo "<script>
                     alert('이미지 업로드 중 에러가 발생했습니다');
@@ -50,7 +42,7 @@
                 exit();
             }
         }else {
-            $sql = "UPDATE user_table SET id = '$username', email = '$email', phonenum = '$phoneNum' WHERE idx = '$idx' ";
+            $sql = "UPDATE user_table SET user_id = '$username', user_email = '$email', user_phonenum = '$phoneNum' WHERE user_idx = '$idx' ";
         }
 
         $result = mysqli_query($db_conn,$sql);

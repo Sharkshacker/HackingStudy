@@ -3,19 +3,19 @@
     <meta charset="UTF-8">
     <title>Signup page</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="/img/sharks2.jpg" type="image/jpeg">
+    <link rel="icon" href="../img/sharks2.jpg" type="image/jpeg">
 </head>
-<body>
-<nav class="navbar">
+<body class = "signup-page">
+        <nav class="navbar">
             <div class="nav-left">
-                <a href="index.php">Sharks</a>
+                <a href="../index.php">Sharks</a>
             </div>
             <div class="nav-right">
             <?php if (isset($_SESSION['username'])) : ?> 
             <a href="logout.php">logout</a>
             <?php endif; ?>
-        </div>
-            </nav>
+            </div>
+        </nav>
     <div class="signup-box">
         <h2>Sign Up</h2>
         <form action="signup_proc.php" method="POST">

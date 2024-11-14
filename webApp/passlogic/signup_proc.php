@@ -1,14 +1,5 @@
 <?php
-    define('DB_SERVER','localhost');
-    define('DB_USERNAME','admin');
-    define('DB_PASSWORD','student1234');
-    define('DB_NAME','users');
-
-    $db_conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
-
-    if($db_conn === false) {
-        die("ERROR: DB가 연결되어있지 않음." . mysqli_connect_error());
-    }
+    include '../db.php';
 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $username = $_POST['username'];
@@ -43,7 +34,7 @@
         }
 
         //사용자 중복 확인
-        $sql = "SELECT * FROM user_table WHERE id= '$username'";
+        $sql = "SELECT * FROM user_table WHERE user_id= '$username'";
         $result = mysqli_query($db_conn, $sql);
 
         if($result && mysqli_num_rows($result)>0) {
@@ -55,7 +46,7 @@
         }
 
         //사용자 등록
-        $sql = "INSERT INTO user_table (id, password, email, phonenum) VALUES ('$username','$hash_password','$email','$phoneNum')";
+        $sql = "INSERT INTO user_table (user_id, user_password, user_email, user_phonenum) VALUES ('$username','$hash_password','$email','$phoneNum')";
         
         if(mysqli_query($db_conn,$sql)) {
             echo "<script>

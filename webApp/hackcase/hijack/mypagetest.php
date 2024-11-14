@@ -16,8 +16,8 @@ if (!isset($_SESSION['username'])) {
     <head>
         <meta charset="UTF-8">
         <title>Sharks Mypage</title>
-        <link rel="stylesheet" href="../style.css">
-        <link rel="icon" href="/img/sharks2.jpg" type="image/jpeg">
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="icon" href="../img/sharks2.jpg" type="image/jpeg">
     </head>
     <body>
         <nav class="navbar">
