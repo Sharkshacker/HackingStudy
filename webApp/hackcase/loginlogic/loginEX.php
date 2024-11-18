@@ -100,7 +100,7 @@
 ?>
 
 <?php
-    // 로그인 식별/인증 괄호
+    // 로그인 식별/인증 동시 괄호
     $db_conn("DB 정보");
 
     $username = $_POST['username'];
@@ -114,6 +114,27 @@
         echo '로그인성공!';
     }else {
         echo '로그인 실패!';
+    }
+?>
+
+<?php
+    // 로그인 식별/인증 분리 괄호
+    $db_conn("DB 정보");
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    $sql = "SELECT * FROM user_table WHERE id = ('$username')";
+    $result = mysqli_query($db_conn,$sql);
+
+    if(mysqli_num_rows($result)>0) {
+        $row = mysqli_fetch_array($result);
+
+        if($row['password'] === $password) {
+            echo "로그인성공!";
+        }else {
+            echo "로그인 실패!";
+        }
     }
 ?>
 
