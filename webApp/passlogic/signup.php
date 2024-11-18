@@ -2,7 +2,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Signup page</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link rel="icon" href="../img/sharks2.jpg" type="image/jpeg">
 </head>
 <body class = "signup-page">

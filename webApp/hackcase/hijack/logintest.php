@@ -5,7 +5,7 @@
         <title>Sharks login</title>
         <link rel="stylesheet" href="../../style.css">
     </head>
-    <body>
+    <body class="logintest">
         <nav class="navbar">
             <div class="nav-left">
                 <a href="">Sharks</a>

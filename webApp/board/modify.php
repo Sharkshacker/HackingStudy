@@ -71,8 +71,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             </table>
             <input type="hidden" name="id" value="<?php echo $board['board_idx']; ?>">
             <ul>
-                <li><button type="button" onclick="location.href='view.php?id=<?php echo $board['board_idx']; ?>'">취소</button></li>
                 <li><input class="button" type="submit" value="수정 완료"></li>
+                <li><button type="button" onclick="location.href='view.php?id=<?php echo $board['board_idx']; ?>'">취소</button></li>
             </ul>
         </form>
     </div>

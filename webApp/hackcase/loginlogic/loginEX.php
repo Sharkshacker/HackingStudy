@@ -80,3 +80,40 @@
         echo "사용자 존재 없음";
     }
 ?> 
+
+<?php
+    // 로그인 식별/인증 개행(\n)
+    $db_conn("DB 정보");
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM user_table WHERE id = '$username' \n and password = '$password'" ; 
+    $result = mysqli_query($db_conn,$sql);
+
+    if(mysqli_num_rows($result)>0) {
+        $row = mysqli_fetch_array($result);
+        echo "로그인성공!";
+    }else {
+        echo "로그인 실패!";
+        exit();
+    }
+?>
+
+<?php
+    // 로그인 식별/인증 괄호
+    $db_conn("DB 정보");
+
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    
+    $sql = "SELECT * FROM user_table WHERE id = ('$username') and password = ('$password')";
+    $result = mysqli_query($db_conn,$sql);
+
+    if(mysqli_num_rows($result)>0) {
+        $row = mysqli_fetch_array($result);
+        echo '로그인성공!';
+    }else {
+        echo '로그인 실패!';
+    }
+?>
+

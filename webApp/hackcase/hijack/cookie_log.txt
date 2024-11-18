@@ -1,6 +1,9 @@
-[2024-11-14 02:08:43]
+[2024-11-15 09:25:37] 로그아웃 감지
 IP: 127.0.0.1
-Page: /hijack/cookie.php
+--------------------------------------------------
+[2024-11-15 09:25:43]
+IP: 127.0.0.1
+Page: /hackcase/hijack/cookie.php
 Session Data: []
 Cookies: {
     "AMCV_E17995E0558BCEBE7F000101%40AdobeOrg": "179643557|MCMID|91371130497713327690345161845802187189|vVersion|5.5.0",
@@ -13,13 +16,105 @@ Cookies: {
     "__trossion": "1727851046_1800_1__fc0636ac-6b14-4362-8cec-3765d70c0d2e:1727851046_1727851046_2_",
     "__troRUID": "fc0636ac-6b14-4362-8cec-3765d70c0d2e",
     "TC_PRIVACY_CENTER": "1",
-    "TC_PRIVACY": "0@081|66|2623@1@@1728003250445,1727851044848,1759107250445@",
-    "PHPSESSID": "b5o5re4lclgqlegl52rvuot56q"
+    "TC_PRIVACY": "0@081|66|2623@1@@1728003250445,1727851044848,1759107250445@"
 }
 --------------------------------------------------
-[2024-11-14 02:08:44]
+[2024-11-15 09:25:49]
 IP: 127.0.0.1
-Page: /hijack/cookie.php
+Page: /hackcase/hijack/cookie.php
+Session Data: {
+    "username": "aaa",
+    "email": "aaa@example.com",
+    "phonenum": "010-1234-5678",
+    "idx": "4"
+}
+Cookies: {
+    "AMCV_E17995E0558BCEBE7F000101%40AdobeOrg": "179643557|MCMID|91371130497713327690345161845802187189|vVersion|5.5.0",
+    "TCPID": "1241031537114623242981",
+    "tc_privacy_ca": "86@8b40dbeb-1d7b-4232-8c6f-c9b79613a25a",
+    "TCID": "1241031537251339347104",
+    "tc_cj_v2": "^cl_]ny[]]_mmZZZZZZKQLQROKJNOJJQZZZ]",
+    "tc_cj_v2_cmp": "",
+    "tc_cj_v2_med": "",
+    "__trossion": "1727851046_1800_1__fc0636ac-6b14-4362-8cec-3765d70c0d2e:1727851046_1727851046_2_",
+    "__troRUID": "fc0636ac-6b14-4362-8cec-3765d70c0d2e",
+    "TC_PRIVACY_CENTER": "1",
+    "TC_PRIVACY": "0@081|66|2623@1@@1728003250445,1727851044848,1759107250445@",
+    "PHPSESSID": "n1e5oc84d30qle7nigmgledrm3"
+}
+--------------------------------------------------
+[2024-11-15 09:25:54]
+IP: 127.0.0.1
+Page: /hackcase/hijack/cookie.php
+Session Data: {
+    "username": "aaa",
+    "email": "aaa@example.com",
+    "phonenum": "010-1234-5678",
+    "idx": "4"
+}
+Cookies: {
+    "AMCV_E17995E0558BCEBE7F000101%40AdobeOrg": "179643557|MCMID|91371130497713327690345161845802187189|vVersion|5.5.0",
+    "TCPID": "1241031537114623242981",
+    "tc_privacy_ca": "86@8b40dbeb-1d7b-4232-8c6f-c9b79613a25a",
+    "TCID": "1241031537251339347104",
+    "tc_cj_v2": "^cl_]ny[]]_mmZZZZZZKQLQROKJNOJJQZZZ]",
+    "tc_cj_v2_cmp": "",
+    "tc_cj_v2_med": "",
+    "__trossion": "1727851046_1800_1__fc0636ac-6b14-4362-8cec-3765d70c0d2e:1727851046_1727851046_2_",
+    "__troRUID": "fc0636ac-6b14-4362-8cec-3765d70c0d2e",
+    "TC_PRIVACY_CENTER": "1",
+    "TC_PRIVACY": "0@081|66|2623@1@@1728003250445,1727851044848,1759107250445@",
+    "PHPSESSID": "n1e5oc84d30qle7nigmgledrm3"
+}
+--------------------------------------------------
+[2024-11-15 09:25:59]
+IP: 127.0.0.1
+Page: /hackcase/hijack/cookie.php
+Session Data: {
+    "username": "aaa",
+    "email": "aaa@example.com",
+    "phonenum": "010-1234-5678",
+    "idx": "4"
+}
+Cookies: {
+    "AMCV_E17995E0558BCEBE7F000101%40AdobeOrg": "179643557|MCMID|91371130497713327690345161845802187189|vVersion|5.5.0",
+    "TCPID": "1241031537114623242981",
+    "tc_privacy_ca": "86@8b40dbeb-1d7b-4232-8c6f-c9b79613a25a",
+    "TCID": "1241031537251339347104",
+    "tc_cj_v2": "^cl_]ny[]]_mmZZZZZZKQLQROKJNOJJQZZZ]",
+    "tc_cj_v2_cmp": "",
+    "tc_cj_v2_med": "",
+    "__trossion": "1727851046_1800_1__fc0636ac-6b14-4362-8cec-3765d70c0d2e:1727851046_1727851046_2_",
+    "__troRUID": "fc0636ac-6b14-4362-8cec-3765d70c0d2e",
+    "TC_PRIVACY_CENTER": "1",
+    "TC_PRIVACY": "0@081|66|2623@1@@1728003250445,1727851044848,1759107250445@",
+    "PHPSESSID": "n1e5oc84d30qle7nigmgledrm3"
+}
+--------------------------------------------------
+[2024-11-15 09:26:00] 로그아웃 감지
+IP: 127.0.0.1
+--------------------------------------------------
+[2024-11-15 09:26:06]
+IP: 127.0.0.1
+Page: /hackcase/hijack/cookie.php
+Session Data: []
+Cookies: {
+    "AMCV_E17995E0558BCEBE7F000101%40AdobeOrg": "179643557|MCMID|91371130497713327690345161845802187189|vVersion|5.5.0",
+    "TCPID": "1241031537114623242981",
+    "tc_privacy_ca": "86@8b40dbeb-1d7b-4232-8c6f-c9b79613a25a",
+    "TCID": "1241031537251339347104",
+    "tc_cj_v2": "^cl_]ny[]]_mmZZZZZZKQLQROKJNOJJQZZZ]",
+    "tc_cj_v2_cmp": "",
+    "tc_cj_v2_med": "",
+    "__trossion": "1727851046_1800_1__fc0636ac-6b14-4362-8cec-3765d70c0d2e:1727851046_1727851046_2_",
+    "__troRUID": "fc0636ac-6b14-4362-8cec-3765d70c0d2e",
+    "TC_PRIVACY_CENTER": "1",
+    "TC_PRIVACY": "0@081|66|2623@1@@1728003250445,1727851044848,1759107250445@"
+}
+--------------------------------------------------
+[2024-11-15 09:26:11]
+IP: 127.0.0.1
+Page: /hackcase/hijack/cookie.php
 Session Data: []
 Cookies: {
     "AMCV_E17995E0558BCEBE7F000101%40AdobeOrg": "179643557|MCMID|91371130497713327690345161845802187189|vVersion|5.5.0",
@@ -33,6 +128,44 @@ Cookies: {
     "__troRUID": "fc0636ac-6b14-4362-8cec-3765d70c0d2e",
     "TC_PRIVACY_CENTER": "1",
     "TC_PRIVACY": "0@081|66|2623@1@@1728003250445,1727851044848,1759107250445@",
-    "PHPSESSID": "b5o5re4lclgqlegl52rvuot56q"
+    "PHPSESSID": "rl8huoqnate3je526hitqr354b"
+}
+--------------------------------------------------
+[2024-11-15 09:26:16]
+IP: 127.0.0.1
+Page: /hackcase/hijack/cookie.php
+Session Data: []
+Cookies: {
+    "AMCV_E17995E0558BCEBE7F000101%40AdobeOrg": "179643557|MCMID|91371130497713327690345161845802187189|vVersion|5.5.0",
+    "TCPID": "1241031537114623242981",
+    "tc_privacy_ca": "86@8b40dbeb-1d7b-4232-8c6f-c9b79613a25a",
+    "TCID": "1241031537251339347104",
+    "tc_cj_v2": "^cl_]ny[]]_mmZZZZZZKQLQROKJNOJJQZZZ]",
+    "tc_cj_v2_cmp": "",
+    "tc_cj_v2_med": "",
+    "__trossion": "1727851046_1800_1__fc0636ac-6b14-4362-8cec-3765d70c0d2e:1727851046_1727851046_2_",
+    "__troRUID": "fc0636ac-6b14-4362-8cec-3765d70c0d2e",
+    "TC_PRIVACY_CENTER": "1",
+    "TC_PRIVACY": "0@081|66|2623@1@@1728003250445,1727851044848,1759107250445@",
+    "PHPSESSID": "rl8huoqnate3je526hitqr354b"
+}
+--------------------------------------------------
+[2024-11-15 09:26:21]
+IP: 127.0.0.1
+Page: /hackcase/hijack/cookie.php
+Session Data: []
+Cookies: {
+    "AMCV_E17995E0558BCEBE7F000101%40AdobeOrg": "179643557|MCMID|91371130497713327690345161845802187189|vVersion|5.5.0",
+    "TCPID": "1241031537114623242981",
+    "tc_privacy_ca": "86@8b40dbeb-1d7b-4232-8c6f-c9b79613a25a",
+    "TCID": "1241031537251339347104",
+    "tc_cj_v2": "^cl_]ny[]]_mmZZZZZZKQLQROKJNOJJQZZZ]",
+    "tc_cj_v2_cmp": "",
+    "tc_cj_v2_med": "",
+    "__trossion": "1727851046_1800_1__fc0636ac-6b14-4362-8cec-3765d70c0d2e:1727851046_1727851046_2_",
+    "__troRUID": "fc0636ac-6b14-4362-8cec-3765d70c0d2e",
+    "TC_PRIVACY_CENTER": "1",
+    "TC_PRIVACY": "0@081|66|2623@1@@1728003250445,1727851044848,1759107250445@",
+    "PHPSESSID": "rl8huoqnate3je526hitqr354b"
 }
 --------------------------------------------------
