@@ -24,6 +24,7 @@ loginlogic 는 로그인 로직 케이스입니다.
 - login2.php -> 인증/식별 분리
 - login3.php -> 인증/식별 동시 (with HASH)
 - login4.php -> 인증/식별 분리 (with HASH)
+- login5.php -> 인증/식별 개행 (\n)
 - loginEX.php 는 더미코드입니다. 접속하지 마세요.
 
 hijack 파일은 키로거 세션쿠키 탈취 실습입니다.
