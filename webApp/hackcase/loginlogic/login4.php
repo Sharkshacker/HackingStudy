@@ -5,7 +5,7 @@
     define('DB_SERVER','localhost');
     define('DB_USERNAME','admin');
     define('DB_PASSWORD','student1234');
-    define('DB_NAME','users');
+    define('DB_NAME','Sharks');
 
     $db_conn = mysqli_connect(DB_SERVER,DB_USERNAME,DB_PASSWORD,DB_NAME);
 
@@ -19,13 +19,13 @@
         $password = $_POST['password'];
         $hash_password = hash('sha512',$password);
 
-        $sql = "SELECT * FROM user_table WHERE id = '$username'";
+        $sql = "SELECT * FROM user_table WHERE user_id = '$username'";
         $result = mysqli_query($db_conn,$sql);
 
         if(mysqli_num_rows($result)>0) {
             $row = mysqli_fetch_array($result);
 
-            if($row['password'] === $hash_password) {
+            if($row['user_password'] === $hash_password) {
                 echo "로그인 성공 !";
             }else {
                 echo "로그인 실패!";
@@ -47,7 +47,7 @@
     <body>
         <nav class="navbar">
             <div class="nav-left">
-                <a href="index.php">Sharks</a>
+                <a href="../../index.php">Sharks</a>
             </div>
             <div class="nav-right">
             <?php if (isset($_SESSION['username'])) : ?> 
