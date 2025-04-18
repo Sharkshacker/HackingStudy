@@ -9,7 +9,7 @@
     <body class="login-page">
         <nav class="navbar">
             <div class="nav-left">
-                <a href="index.php">Sharks</a>
+                <a href="../index.php">Sharks</a>
             </div>
             <div class="nav-right">
             <?php if (isset($_SESSION['username'])) : ?> 
@@ -23,14 +23,15 @@
             <form action="login_proc.php" method="POST">
             <div class="input-group">
                 <label for="username">ID</label>
-                <input type="text" id="username" name="username" required>
+                <input type="text" id="username" name="username" placeholder="ID를 입력하세요" required>
             </div>
             <div class="input-group">
                 <label for="password">PW</label>
-                <input type="password" id="password" name="password" required>
+                <input type="password" id="password" name="password" placeholder="PW를 입력하세요" required>
             </div>
             <button type="submit">submit</button>
             <p class="signup-text"><a href="signup.php">Sign Up</a></p>
+            <p class="signup-text"><a href="find.php">계정 찾기</a></p>
             </form>
         </div>
     </body>

@@ -468,3 +468,56 @@ hr {
 .viewButton button:hover {
     background-color: #0056b3;
 }
+
+/* 검색 + 글쓰기 버튼 묶는 wrapper */
+.search-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 검색창 스타일 */
+.search-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.search-form input[type="text"] {
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-form input[type="submit"] {
+    padding: 8px 12px;
+    background-color: #87cee8;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+
+.search-form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* 검색 드롭다운 스타일 (검색바 select 요소) */
+.search-form select {
+    padding: 8px 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+    color: #333;
+    appearance: none; /* 브라우저 기본 화살표 제거 (선택적) */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml;utf8,<svg fill='%23666' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 12px;
+    padding-right: 30px;
+}
+
