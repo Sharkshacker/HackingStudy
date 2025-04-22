@@ -23,6 +23,7 @@ mysql 설정
 ex > localhost:8080/loginlogic/login1.php
 
 Test 계정
+- admin / admin (관리자 계정)
 - aaa / aaa (not HASH) -> hackcase/loginlogic 에서만 사용가능
 - bbb / bbb (password HASH)
 - loginlogic 할때 사용하시면 됩니다.
