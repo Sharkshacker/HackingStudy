@@ -1,8 +1,7 @@
 <?php
-session_start(); // 세션 시작
-include __DIR__ . '/db.php'; // DB 연결
+session_start(); 
+include __DIR__ . '/db.php'; 
 
-// 로그인 체크
 if (!isset($_SESSION['username'], $_SESSION['idx'])) {
     echo "<script>
         alert('로그인 후 사용가능합니다.');
@@ -11,7 +10,6 @@ if (!isset($_SESSION['username'], $_SESSION['idx'])) {
     exit();
 }
 
-// CSRF 토큰 생성
 if (!isset($_SESSION['csrf_token'])) {
     $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
 }
@@ -37,8 +35,7 @@ $csrf_token = $_SESSION['csrf_token'];
                         ? $_SESSION['profile_image']
                         : 'img/profileshark.png'; ?>"
                     alt="Profile Image" id="profileImage" class="profile-img">
-                <div class="edit-icon"
-                     onclick="document.getElementById('imageUpload').click()">✏️</div>
+                <div class="edit-icon" onclick="document.getElementById('imageUpload').click()">✏️</div>
             </div>
             <h2 style="text-align:center;margin:20px 0;">
                 <?php echo htmlspecialchars($_SESSION['username']); ?>
@@ -90,9 +87,7 @@ $csrf_token = $_SESSION['csrf_token'];
 
         <?php if ($_SESSION['username'] !== 'admin'): ?>
         <!-- 회원 탈퇴 폼 (관리자 계정에는 숨김) -->
-        <form method="POST" action="user_delete.php"
-              onsubmit="return confirm('정말 탈퇴하시겠습니까?');"
-              style="margin-top:20px;">
+        <form method="POST" action="user_delete.php" onsubmit="return confirm('정말 탈퇴하시겠습니까?');" style="margin-top:20px;">
             <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
             <button type="submit" style="background-color:#e74c3c;">회원 탈퇴</button>
         </form>

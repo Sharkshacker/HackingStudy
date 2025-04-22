@@ -2,13 +2,11 @@
 session_start();
 include '../db.php';
 
-// 로그인 상태 체크
 if (!isset($_SESSION['username'])) {
     echo "<script>alert('로그인 후 이용해주세요.'); location.href='../passlogic/login.php';</script>";
     exit();
 }
 
-// GET 파라미터로 전달된 게시글 id 확인 및 정수 변환
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if ($id === 0) {
     echo "<script>alert('잘못된 접근입니다.'); location.href='../index.php';</script>";

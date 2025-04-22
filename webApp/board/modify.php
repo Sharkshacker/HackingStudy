@@ -2,25 +2,21 @@
 session_start();
 include '../db.php';
 
-// 로그인 상태가 아니라면 로그인 페이지로 리다이렉트
 if (!isset($_SESSION['username'])) {
     echo "<script>alert('로그인 후 이용해주세요.'); location.href='../passlogic/login.php';</script>";
     exit();
 }
 
-// GET 파라미터로 전달된 게시글 id 확인
 $id = isset($_GET['id']) ? $_GET['id'] : 0;
 if ($id == 0) {
     echo "<script>alert('잘못된 접근입니다.'); location.href='../index.php';</script>";
     exit();
 }
 
-// DB에서 해당 게시글 정보 조회
 $sql = mysqli_query($db_conn, "SELECT * FROM board_table WHERE board_idx = $id");
 $board = $sql->fetch_array();
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // 제목, 내용 안전하게 처리
     $title = mysqli_real_escape_string($db_conn, $_POST['title']);
     $content = mysqli_real_escape_string($db_conn, $_POST['content']);
 
@@ -71,7 +67,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
         }
 
-        // 최종적으로 DB에 게시글 정보를 업데이트 (두 파일 관련 컬럼 모두 업데이트)
         $modify = "UPDATE board_table
                    SET board_title = '$title',
                        board_content = '$content',
@@ -80,7 +75,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                    WHERE board_idx = $id";
         mysqli_query($db_conn, $modify);
 
-        // 수정 완료 후 해당 게시글 상세보기 페이지로 이동
         echo "<script>
             alert('수정 완료되었습니다!');
             window.location.href = 'view.php?id=$id';

@@ -1,8 +1,8 @@
 <?php
     include 'db.php';
 
-    $list_num = 10; // 한 페이지당 게시글 수
-    $page_num = 10; // 한 블록당 페이지 수
+    $list_num = 10; 
+    $page_num = 10; 
 
     // GET 파라미터 처리
     $search_by = $_GET['search_by'] ?? '';

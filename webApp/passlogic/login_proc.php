@@ -28,7 +28,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['profile_image'] = 'img/profileshark.png';
         }
 
-        // 관리자 여부 체크
         if ($user['user_id'] === 'admin') {
             echo "<script>
                 alert('환영합니다! 관리자계정입니다.');

@@ -40,11 +40,8 @@
                 <input type="text" name="query" placeholder="검색어 입력" value="<?= $_GET['query'] ?? '' ?>">
                 <input type="submit" value="검색">
             </form>
-
-            <!-- ✏️ 글쓰기 버튼은 왼쪽 정렬 -->
             <button class="write-button" onclick="location.href = 'board/write.php'">글쓰기</button>
         </div>
-
         <table>
             <tr>
                 <th width="70">번호</th>
@@ -54,13 +51,13 @@
                 <th width="100">조회수</th>
             </tr>
             <?php
-                include 'board/boardpage.php'; // 게시글 출력 로직
+                include 'board/boardpage.php'; 
             ?>
         </table>
         
         <div class="page">
             <?php
-                include 'board/pagenation.php'; // 페이지네이션
+                include 'board/pagenation.php'; 
             ?>
         </div>
     </div>

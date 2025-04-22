@@ -7,9 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // CSRF 검증
-if (!isset($_POST['csrf_token'], $_SESSION['csrf_token'])
-    || $_POST['csrf_token'] !== $_SESSION['csrf_token']
-) {
+if (!isset($_POST['csrf_token'], $_SESSION['csrf_token'])|| $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
     echo "<script>
             alert('잘못된 접근입니다.');
             history.back();
@@ -42,7 +40,7 @@ if (!preg_match("/^\d{3}-\d{4}-\d{4}$/", $phoneNum)) {
 
 // 기본 이미지 제거 요청 처리
 if ($removeFlag === '1') {
-    // 기존 파일 삭제 (선택)
+    // 기존 파일 삭제 
     if (!empty($_SESSION['profile_image']) && file_exists($_SESSION['profile_image'])) {
         @unlink($_SESSION['profile_image']);
     }

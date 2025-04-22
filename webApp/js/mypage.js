@@ -1,4 +1,3 @@
-// js/mypage.js
 const defaultImagepath = 'img/profileshark.png';
 
 function setDefaultImage() {

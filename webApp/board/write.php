@@ -2,7 +2,6 @@
 session_start();
 include '../db.php';
 
-// 로그인 상태가 아니라면 로그인 페이지로 리다이렉트
 if (!isset($_SESSION['username'])) {
     echo "<script>
         alert('로그인 후 사용 가능합니다.');
@@ -12,7 +11,6 @@ if (!isset($_SESSION['username'])) {
 }
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // 게시글 제목과 내용을 안전하게 처리 (SQL 인젝션 방지)
     $title = mysqli_real_escape_string($db_conn, $_POST['title']);
     $content = mysqli_real_escape_string($db_conn, $_POST['content']);
     

@@ -1,16 +1,12 @@
 <?php
-define('BASE_URL', ''); // 실제 루트 경로
+define('BASE_URL', ''); 
 ?>
 <nav class="navbar">
     <div class="nav-left">
         <a href="<?php echo BASE_URL; ?>/index.php">Sharks</a>
     </div>
     <div class="nav-right">
-        <?php
-            $img = !empty($_SESSION['profile_image'])
-                 ? $_SESSION['profile_image']
-                 : 'img/profileshark.png';
-        ?>
+        <?php $img = !empty($_SESSION['profile_image']) ? $_SESSION['profile_image'] : 'img/profileshark.png'; ?>
         <img
             src="<?php echo htmlspecialchars(BASE_URL.'/'.$img); ?>"
             alt="Profile Image"

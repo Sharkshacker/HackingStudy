@@ -24,7 +24,7 @@ function updateModalPosition(modal, profileIcon) {
     // 화면 오른쪽을 넘어가지 않도록 조정
     var leftPosition = rect.left;
     if (leftPosition + modalWidth > window.innerWidth) {
-        leftPosition = window.innerWidth - modalWidth - 10; // 화면 너비를 넘지 않도록 조정 (10픽셀 여백)
+        leftPosition = window.innerWidth - modalWidth - 10; // 화면 너비를 넘지 않도록 조정 
     }
 
     // 모달 위치를 업데이트

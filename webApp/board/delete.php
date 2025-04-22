@@ -2,7 +2,6 @@
 session_start();
 include '../db.php';
 
-// 게시글 id를 GET 파라미터로 받음 (추가로 로그인/권한 검사하면 더욱 안전합니다)
 $id = isset($_GET['id']) ? intval($_GET['id']) : 0;
 if ($id === 0) {
     echo "<script>alert('잘못된 접근입니다.'); location.href='../index.php';</script>";
@@ -24,7 +23,6 @@ if ($result) {
     }
 }
 
-// DB에서 게시글 삭제
 $sql = mysqli_query($db_conn, "DELETE FROM board_table WHERE board_idx = $id");
 
 if ($sql) {
