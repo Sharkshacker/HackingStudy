@@ -7,7 +7,8 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // CSRF 검증
-if (!isset($_POST['csrf_token'], $_SESSION['csrf_token'])|| $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
+if (!isset($_POST['csrf_token'], $_SESSION['csrf_token'])
+    || $_POST['csrf_token'] !== $_SESSION['csrf_token']) {
     echo "<script>
             alert('잘못된 접근입니다.');
             history.back();
@@ -21,6 +22,19 @@ $email      = $_POST['email'];
 $phoneNum   = $_POST['phonenum'];
 $idx        = $_SESSION['idx'];
 $removeFlag = isset($_POST['removeImage']) ? $_POST['removeImage'] : '0';
+
+// ★ 이름 중복 체크 추가 시작 ★
+$dupSql = "SELECT COUNT(*) AS cnt FROM user_table WHERE user_id = '$username' AND user_idx != $idx";
+$dupRes = mysqli_query($db_conn, $dupSql);
+$dupRow = mysqli_fetch_assoc($dupRes);
+if ($dupRow['cnt'] > 0) {
+    echo "<script>
+            alert('이미 사용 중인 이름입니다.');
+            history.back();
+          </script>";
+    exit();
+}
+// ★ 이름 중복 체크 추가 끝 ★
 
 // 유효성 검사
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
